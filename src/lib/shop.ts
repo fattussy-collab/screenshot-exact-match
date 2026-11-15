@@ -2,7 +2,7 @@ import trainer from '@/assets/trainer.jpg';
 import headphones from '@/assets/headphones.jpg';
 import bag from '@/assets/bag.jpg';
 export { trainer, headphones, bag };
-export type Product = { id: string; name: string; category: string; price: number; image?: string; illustration?: string; sizes: string[] };
+export type Product = { id: string; name: string; category: string; price: number; image?: string | undefined; illustration?: string | undefined; sizes: string[] };
 export type Store = { id: string; name: string; url: string; symbol: string; tagline: string; products: Product[] };
 const product = (id: string, name: string, category: string, price: number, image: string | undefined, illustration: string | undefined, sizes = ['S', 'M', 'L']): Product => ({ id, name, category, price, image, illustration, sizes });
 export const stores: Store[] = [

@@ -1,6 +1,6 @@
 export const money = (amount: number) => new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(amount);
 export const STORAGE_KEY = 'flex-bank-state-v1';
-export type Transaction = { id: string; name: string; category: string; amount: number; date: string; icon: string; reference?: string };
+export type Transaction = { id: string; name: string; category: string; amount: number; date: string; icon: string; reference?: string | undefined };
 export type Contact = { id: string; name: string; initials: string; tone: number };
 export type BankState = {
   balance: number; frozen: boolean; contacts: Contact[]; transactions: Transaction[];
@@ -21,7 +21,7 @@ export const initialState: BankState = {
     { id: 'sam', name: 'Sam', category: 'Transfers', amount: 25, date: '2026-11-13T12:30:00Z', icon: 'person', reference: 'Lunch yesterday' },
   ],
 };
-export function applyTransaction(state: BankState, amount: number, name: string, category: string, icon: string, reference?: string): BankState {
+export function applyTransaction(state: BankState, amount: number, name: string, category: string, icon: string, reference?: string | undefined): BankState {
   if (!Number.isFinite(amount) || amount === 0) throw new Error('Enter an amount greater than £0.');
   const rounded = Math.round(amount * 100) / 100;
   if (rounded === 0) throw new Error('Enter an amount of at least £0.01.');
