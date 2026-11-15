@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## App architecture
+- Keep the banking simulator in browser-safe state with localStorage hydration in an effect; the requested simulator must survive refreshes without a real banking backend.
+- Centralize all balance changes and purchase restrictions in the bank model and test those rules; transfers, salary and checkout must use the same money calculations.
+- Use reusable presentation controls and a shared shop catalogue, with tab state inside the home route; this is a four-tab simulated banking experience rather than a marketing website.
