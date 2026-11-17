@@ -1,10 +1,21 @@
 import trainer from '@/assets/trainer.jpg';
 import headphones from '@/assets/headphones.jpg';
 import bag from '@/assets/bag.jpg';
+import hoodie from '@/assets/hoodie.jpg';
+import coat from '@/assets/coat.jpg';
+import tracksuit from '@/assets/tracksuit.jpg';
+import jeans from '@/assets/jeans.jpg';
+import phone from '@/assets/phone.jpg';
+import laptop from '@/assets/laptop.jpg';
+import perfume from '@/assets/perfume.jpg';
+import cream from '@/assets/cream.jpg';
+import lipstick from '@/assets/lipstick.jpg';
+import serum from '@/assets/serum.jpg';
 export { trainer, headphones, bag };
 export type Product = { id: string; name: string; category: string; price: number; image?: string | undefined; illustration?: string | undefined; sizes: string[] };
 export type Store = { id: string; name: string; url: string; symbol: string; tagline: string; products: Product[] };
-const product = (id: string, name: string, category: string, price: number, image: string | undefined, illustration: string | undefined, sizes = ['S', 'M', 'L']): Product => ({ id, name, category, price, image, illustration, sizes });
+const cataloguePhotos: Record<string, string> = { hoodie, coat, tracksuit, jeans, phone, laptop, perfume, cream, lipstick, serum };
+const product = (id: string, name: string, category: string, price: number, image: string | undefined, illustration: string | undefined, sizes = ['S', 'M', 'L']): Product => ({ id, name, category, price, image: image ?? cataloguePhotos[id === 'b3' ? 'serum' : illustration ?? ''], illustration, sizes });
 export const stores: Store[] = [
  { id:'nikey', name:'Nikey UK', url:'www.nikey-store.co.uk', symbol:'↗', tagline:'A little more movement.', products:[product('n1','Air Flex Runner','Trainers',89.99,trainer,undefined,['UK 7','UK 8','UK 9']),product('n2','Everyday Fleece Hoodie','Hoodies',65,undefined,'hoodie'),product('n3','Club Tracksuit','Tracksuits',95,undefined,'tracksuit'),product('n4','Air Flex Pro','Trainers',119.99,trainer,undefined,['UK 7','UK 8','UK 9'])] },
  { id:'zarra', name:'Zarra', url:'www.zarra-fashion.co.uk', symbol:'Z', tagline:'Your next everyday favourite.', products:[product('z1','Wool Blend Coat','Coats',89.99,undefined,'coat'),product('z2','Straight Leg Denim','Jeans',39.99,undefined,'jeans'),product('z3','Relaxed Cotton Hoodie','Streetwear',35.99,undefined,'hoodie'),product('z4','City Shoulder Bag','Accessories',45.99,bag,undefined)] },

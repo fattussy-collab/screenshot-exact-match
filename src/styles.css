@@ -80,4 +80,71 @@ h1 { font-size:27px; font-weight:800; line-height:1.4; margin:3px 0 0; } h2 { fo
  .modal-overlay { align-items:flex-end; padding:0; } .modal { border-radius:20px 20px 0 0; padding:14px 24px 30px; max-height:90dvh; } .sheet-handle { display:block; width:34px; height:4px; border-radius:8px; background:var(--border); margin:0 auto 18px; }
  .browser-content { padding:18px 14px; } .bookmark-grid { gap:9px; } .bookmark { padding:15px 4px; font-size:10px; } .bookmark small { font-size:8px; } .bookmark-symbol { width:43px; height:43px; } .product-grid { gap:14px; } .product-controls { gap:11px; } .store-heading h2 { font-size:21px; }
 }
+.bank-shell { max-width:1120px; }
+.topbar { height:84px; }
+.greeting { padding:30px 0 28px; }
+.greeting .eyebrow:first-child { font-size:10px; font-weight:700; }
+h1 { font-weight:700; } h2 { font-size:16px; font-weight:700; }
+.connection-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--success); margin-right:7px; }
+.balance-panel { border:0; border-radius:0; box-shadow:none; background:transparent; padding:12px 0 0; }
+.balance-title { color:var(--foreground); font-weight:600; }
+.balance { font-size:48px; font-weight:650; margin-top:12px; }
+.balance-subtitle { font-size:12px; color:var(--muted-foreground); margin:3px 0 0; }
+.account-details { margin-top:26px; }
+.account-detail strong { font-variant-numeric:tabular-nums; }
+.quick-actions { gap:32px; margin-top:25px; padding-top:20px; }
+.quick-action button { border-radius:50%; }
+.card-area { padding:12px 0 0 24px; }
+.debit-card { aspect-ratio:1.586; border-radius:10px; background:linear-gradient(115deg,var(--primary),var(--card-shade)); box-shadow:var(--shadow); }
+.debit-card::after { width:230px; height:320px; border-width:2px; border-radius:0; top:-65px; right:-70px; }
+.debit-card::before { content:''; position:absolute; inset:0; background:linear-gradient(130deg,transparent 45%,color-mix(in oklch,var(--primary-foreground) 5%,transparent) 45%,transparent 75%); pointer-events:none; }
+.debit-card .logo-coral { fill:var(--coral); }
+.card-number { font-family:monospace; font-size:18px; font-weight:500; }
+.card-caption { font-size:11px; }
+.activity-layout { margin-top:40px; padding-top:28px; border-top:1px solid var(--border); gap:44px; }
+.transactions { background:transparent; padding:0; border:0; border-radius:0; }
+.transaction-date { font-size:11px; font-weight:600; color:var(--muted-foreground); padding:16px 0 5px; }
+.transaction { width:100%; height:auto; border-radius:0; padding:16px 0; text-align:left; justify-content:flex-start; white-space:normal; }
+.transaction-name strong { font-weight:650; }
+.transaction-name span { overflow-wrap:anywhere; }
+.transaction-value { font-variant-numeric:tabular-nums; }
+.store-icon { border-radius:50%; }
+.account-summary { padding:0 0 26px; margin-bottom:26px; border-bottom:1px solid var(--border); }
+.cashflow { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:7px 0 26px; }
+.cashflow>div+div { border-left:1px solid var(--border); padding-left:20px; }
+.cashflow span { display:flex; align-items:center; gap:5px; color:var(--muted-foreground); font-size:11px; }
+.cashflow strong { display:block; margin-top:9px; font-size:22px; font-weight:650; font-variant-numeric:tabular-nums; }
+.cashflow>div:first-child svg { color:var(--success); } .cashflow>div:last-child svg { color:var(--coral); }
+.salary-preview { display:flex; align-items:center; gap:12px; padding-top:18px; border-top:1px solid var(--border); }
+.salary-preview>div { flex:1; } .salary-preview strong { font-size:12px; } .salary-preview>div>span { display:block; font-size:11px; color:var(--muted-foreground); margin-top:4px; }
+.simulation-footer { display:flex; align-items:center; justify-content:center; gap:6px; font-size:10px; color:var(--muted-foreground); margin:36px 0 0; }
+.form-panel { border:0; background:transparent; border-radius:0; padding:22px 0; border-bottom:1px solid var(--border); }
+.browser { border:0; background:transparent; border-radius:0; }
+.browser-toolbar { border:1px solid var(--border); border-radius:6px; }
+.browser-content { padding:24px 0; }
+.bookmark { border-radius:6px; background:var(--card); }
+.insight { background:transparent; padding:22px 0; border-top:1px solid var(--border); border-radius:0; }
+.product img { border-radius:4px; }
+.product h3 { font-weight:650; }
+.notification { border-radius:8px; }
+.transaction-search { display:flex; gap:10px; align-items:center; background:var(--muted); padding:10px 12px; border-radius:6px; margin-bottom:15px; color:var(--muted-foreground); }
+.transaction-search input { background:transparent; border:0; outline:none; width:100%; font-size:12px; color:var(--foreground); }
+.transaction-detail-hero { display:flex; flex-direction:column; align-items:center; gap:14px; padding:15px 0 26px; }
+.transaction-detail-hero .store-icon { width:54px; height:54px; }
+.transaction-detail-hero>strong { font-size:32px; font-variant-numeric:tabular-nums; font-weight:650; }
+.transaction-detail-hero>span { display:flex; align-items:center; gap:4px; font-size:11px; color:var(--success); }
+.transaction-detail-list { margin:0; } .transaction-detail-list>div { display:flex; align-items:baseline; justify-content:space-between; gap:18px; padding:15px 0; border-top:1px solid var(--border); font-size:12px; }
+.transaction-detail-list dt { color:var(--muted-foreground); flex-shrink:0; } .transaction-detail-list dd { margin:0; text-align:right; overflow-wrap:anywhere; }
+@media(max-width:767px) {
+ .topbar { height:68px; } .greeting { padding:22px 0; }
+ .balance { font-size:42px; } .balance-panel { padding:0; }
+ .account-layout { gap:28px; } .card-area { padding:0; gap:12px; }
+ .card-area .debit-card { max-width:360px; align-self:center; }
+ .activity-layout { margin-top:28px; padding-top:22px; gap:32px; }
+ .form-panel { padding:20px 0; } .browser-content { padding:22px 0; }
+ .transaction { gap:10px; } .transaction>svg { display:none; }
+ .cashflow strong { font-size:21px; } .balance-title { font-size:12px; }
+ .transaction-name strong { font-size:12px; } .transaction-value { font-size:12px; }
+ .transaction-detail-list>div { gap:12px; }
+}
 @media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
