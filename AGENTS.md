@@ -34,3 +34,6 @@ use the editor.
 - Centralize all balance changes and purchase restrictions in the bank model and test those rules; transfers, salary and checkout must use the same money calculations.
 - Use reusable presentation controls and a shared shop catalogue, with tab state inside the home route; this is a four-tab simulated banking experience rather than a marketing website.
 - Resolve product photography in the shared catalogue so storefronts use consistent bundled images without browser-only dependencies.
+- Keep entered profile names in transient React state and show account entry on every fresh page load; this creates pretend onboarding without authentication or persisted personal identity.
+- Savings movements and statement reconciliation live in the bank model; goal funding must conserve total simulated funds and exports must reconcile transaction history.
+- Keep optional savings, milestone, receipt and statement views in a reusable browser-safe experience component; this enriches Home without adding navigation tabs.

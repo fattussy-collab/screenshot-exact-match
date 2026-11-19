@@ -24,3 +24,12 @@ export const stores: Store[] = [
  { id:'apfel', name:'Apfel Store', url:'apfel-uk.com', symbol:'◕', tagline:'Good things. Brilliantly simple.', products:[product('p1','AirSounds Max','Headphones',499,headphones,undefined,['One size']),product('p2','Apfel Phone 16','Phones',799,undefined,'phone',['128GB','256GB']),product('p3','Book Air 13-inch','Laptops',999,undefined,'laptop',['256GB','512GB']),product('p4','AirSounds Studio','Headphones',249,headphones,undefined,['One size'])] },
  { id:'seph', name:'Sephoria', url:'www.sephoria-beauty.co.uk', symbol:'≋', tagline:'Feel good in your own skin.', products:[product('b1','Daily Dew Moisturiser','Skincare',32,undefined,'cream',['50ml','100ml']),product('b2','Soft Glow Lipstick','Makeup',24,undefined,'lipstick',['One size']),product('b3','Hydrating Face Serum','Skincare',42,undefined,'perfume',['30ml','50ml']),product('b4','Everyday Skin Tint','Makeup',28,undefined,'cream',['30ml','50ml'])] },
 ];
+const additions: Record<string, Product[]> = {
+ nikey: [product('n5','Studio Zip Hoodie','Hoodies',72,hoodie,undefined), product('n6','Court Everyday','Trainers',74.99,trainer,undefined,['UK 6','UK 7','UK 8','UK 9','UK 10'])],
+ zarra: [product('z5','Cropped City Coat','Coats',79.99,coat,undefined), product('z6','Everyday Crossbody','Accessories',29.99,bag,undefined,['One size'])],
+ asos: [product('a5','Off-duty Fleece','Outfits',29,hoodie,undefined), product('a6','Classic Straight Denim','Outfits',42,jeans,undefined,['28','30','32','34'])],
+ self: [product('s5','Weekend Leather Bag','Designer bags',225,bag,undefined,['One size']), product('s6','No. 04 Travel Edition','Perfumes',45,perfume,undefined,['30ml'])],
+ apfel: [product('p5','AirSounds Wireless','Headphones',179,headphones,undefined,['One size']), product('p6','Book Air 15-inch','Laptops',1199,laptop,undefined,['256GB','512GB'])],
+ seph: [product('b5','Overnight Recovery Serum','Skincare',38,serum,undefined,['30ml']), product('b6','Velvet Lip Colour','Makeup',22,lipstick,undefined,['One size'])],
+};
+for (const store of stores) store.products.push(...(additions[store.id] ?? []));
